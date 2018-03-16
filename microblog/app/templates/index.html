@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index </title>
+</head>
+<body>
+	<h1>microblog</h1>
+	{% extends "base.html" %} 
+	<!-- this establishes the link between the two templates -->
+
+	{% block content %}
+		<h1>Hi,{{ user.nickname }} </h1>
+		{% for post in posts %}
+		<div><p>
+			{{ post.author.nickname }} says:<b>{{post.body}}</b>
+		</p></div>
+		{% endfor %}
+	{% endblock %}
+
+</body>
+</html>
